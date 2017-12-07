@@ -1,0 +1,11 @@
+server:
+  port: 8989
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: redis-service
+  platform:
+    locks:
+      expiry: 120000 # 2 minutes

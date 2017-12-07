@@ -1,0 +1,3 @@
+rootProject.name = 'spring-boot-redis-demo'
+include 'redis-server'
+
