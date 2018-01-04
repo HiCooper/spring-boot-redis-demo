@@ -1,4 +1,4 @@
-package com.berry.redis.conf;
+package com.berry.redis.base.conf;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

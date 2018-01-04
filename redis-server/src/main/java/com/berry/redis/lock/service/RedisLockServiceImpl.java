@@ -26,7 +26,9 @@ public class RedisLockServiceImpl implements LockService {
 
     private String prefix = DEFAULT_LOCK_PREFIX;
 
-    // 30 seconds
+    /**
+     * 30 seconds
+     */
     @Setter
     private long expiry = 30000;
 
