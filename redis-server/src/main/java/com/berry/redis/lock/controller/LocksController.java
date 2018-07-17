@@ -20,8 +20,6 @@ import com.berry.redis.lock.exception.LockNotHeldException;
 import com.berry.redis.lock.exception.NoSuchLockException;
 import com.berry.redis.lock.service.LockService;
 import com.berry.redis.lock.model.Lock;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,10 +33,13 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/")
-@RequiredArgsConstructor(onConstructor = @_(@Autowired))
 public class LocksController {
 
     private final LockService service;
+
+    public LocksController(LockService service) {
+        this.service = service;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public Iterable<Lock> locks() {
